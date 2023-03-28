@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Education.Data.Teacher>
+
+@{
+    ViewBag.Title = "تفعيل مدرسين";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>تفعيل مدرسين</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="card shadow mb-4">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="card-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">@ViewBag.Title</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="table-responsive">
+                            <table data-order='[]' class="table datatables" id="dataTable-1">
+                                <thead>
+
+                                    <tr>
+                                        <th>
+                                            <p>ر.ت</p>
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("الاسم")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("مكان الميلاد")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("تاريخ الميلاد")
+                                        </th>
+
+                                        <th>
+                                            @Html.DisplayName("الايميل")
+                                        </th>
+
+                                        <th>
+                                            @Html.DisplayName("الهاتف")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("مفعل")
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                @{
+                                    int count = 0;
+                                }
+                                    <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                        <tr>
+                                            <td>
+                                               @count
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BirthLocation)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BirthDate)
+                                            </td>
+
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Email)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Mobile)
+                                            </td>
+
+                                            <td>
+                                                @if (item.Status == "")
+								{
+                                <p>مفعل</p>
+								}
+								else
+								{
+                                <p>غير مفعل</p>
+								}
+
+                                            </td>
+                                            <td>
+                                                <button name="editTEacherId" value="@item.IDTeacher" class="btn btn-info">تعديل</button>
+
+                                                @*@Html.ActionLink("تفاصيل", "Details", new { item.IDTeacher=item.IDTeacher }) |*@
+                                            </td>
+                                        </tr>
+
+                                }
+                                    </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            }

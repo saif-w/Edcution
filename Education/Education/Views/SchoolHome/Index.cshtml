@@ -1,0 +1,119 @@
+﻿@using Education.Models
+@model HomeModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 mb-4">
+			<div class="card shadow">
+				<div class="card-body">
+					<a href="@Url.Action("TeachersActive", "TeacherTech")">
+						<div class="row align-items-center">
+							<div class="col">
+								<span class="h4 mb-0">شاشة تفعيل المدرسين</span>
+								<p class="small text-muted mb-0"></p>
+								<span class="badge badge-pill badge-warning">عرض سريع</span>
+							</div>
+							<div class="col-auto">
+								<span class="fe fe-32 fe-play text-muted mb-0"></span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mb-4">
+			<div class="card shadow danger">
+				<div class="card-body ">
+					
+					<a href="@Url.Action("Index", "AspNetUsers")">
+						<div class="row align-items-center">
+							<div class="col">
+								<span class="h4 mb-0">انشاء حساب جديد</span>
+								<p class="small text-muted mb-0"></p>
+								<span class="badge badge-pill badge-warning">عرض سريع</span>
+							</div>
+							<div class="col-auto">
+								<span class="fe fe-32 fe-user-plus text-muted mb-0"></span>
+							</div>
+						</div>
+						</a>
+</div>
+			</div>
+		</div>
+		<div class="col-md-4 mb-4">
+			<div class="card shadow">
+				<div class="card-body">
+					<div class="row align-items-center">
+						<div class="col">
+							<span class="h4 mb-0"> عدد المدرسين</span>
+							<p class="small text-muted mb-0">@Model.SchoolCount</p>
+							<span class="badge badge-pill badge-warning"></span>
+						</div>
+						<div class="col-auto">
+							<span class="fe fe-32 fe-users text-muted mb-0"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 mb-4">
+		<div class="card shadow">
+			<div class="card-header">
+				<strong class="card-title mb-0">عرض الاحصائية</strong>
+			</div>
+			<div class="card-body">
+				<canvas id="myChart" width="400" height="100"></canvas>
+				<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+			<script>
+			
+				$.ajax({
+					type: "GET",
+					url: "/SchoolHome/GetSchoolData",
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: function (chData) {
+						var aData = chData;
+						var aLabels = aData[0];
+						var aDatasets1 = aData[1];
+						var dataT = {
+							labels: aLabels,
+							datasets: [{
+								label: "Test Data",
+								data: aDatasets1,
+								fill: false,
+								backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+								borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+								borderWidth: 1
+							}]
+						};
+						var ctx = $("#myChart").get(0).getContext("2d");
+						var myNewChart = new Chart(ctx, {
+							type: 'bar',
+							data: dataT,
+							options: {
+								responsive: true,
+								title: { display: true, text: 'بيانات المدارس' },
+								legend: { position: 'bottom' },
+								scales: {
+									xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+									yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+								},
+							}
+						});
+					}
+				});
+			
+			</script>
+			</div> <!-- /.card-body -->
+		</div> <!-- /.card -->
+	</div>
+	 <!-- end section -->
+	<!-- info small box -->
+	 <!-- end section -->
+	<!-- widgets -->
+</div>

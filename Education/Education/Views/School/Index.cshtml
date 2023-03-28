@@ -1,0 +1,92 @@
+﻿@using Education.Models
+@model SchoolModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@using (Html.BeginForm("Index", "School", FormMethod.Post))
+{
+
+<div class="card shadow mb-4">
+	<div class="card-header">
+		<strong class="card-title">Form controls</strong>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group mb-3">
+					<label for="simpleinput">SchoolCode</label>
+					@Html.TextBoxFor(a=>a.SchoolCode,new {@class= "form-control" })
+					
+				</div>
+				<div class="form-group mb-3">
+					<label for="simpleinput">SchoolName</label>
+					@Html.TextBoxFor(a => a.SchoolName, new { @class = "form-control" })
+				</div>
+				<div class="form-group mb-3">
+					<label for="simpleinput">Phone</label>
+					@Html.TextBoxFor(a => a.Phone, new { @class = "form-control" })
+				</div>
+			
+			</div> <!-- /.col -->
+			<div class="col-md-6">
+				<div class="form-group mb-3">
+					<label for="simpleinput">Type</label>
+					@Html.TextBoxFor(a => a.Type, new { @class = "form-control" })
+				</div>
+				<div class="form-group mb-3">
+					<label for="simpleinput">Text</label>
+					@Html.CheckBoxFor(a => a.Active, new { @class = "form-control" })
+				</div>
+			</div>
+		</div>
+	<div class="row">
+		<button class="btn btn-primary">حفظ
+			</button>
+	</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">@ViewBag.Title</div>
+		<div class="panel-body">
+			<div class="form-group">
+				<div class="table-responsive">
+					<table data-order='[]' class="table table-striped table-bordered table-hover" id="dataTables-example">
+						<thead style="color:black;">
+							<tr>
+								<th>ر.ت</th>
+								<th>كود</th>
+								<th>اسم المدرسة</th>
+								<th> الهاتف</th>
+								<th>تعديل</th>
+								<th>حذف</th>
+							</tr>
+						</thead>
+						<tbody>
+							@{
+								var count = 0;
+							}
+							@foreach (var item in Model.SchoolGrid)
+							{
+								count++;
+								<tr class="odd gradeX">
+									<td>@count</td>
+									<td>@Html.DisplayFor(modelItem => item.SchoolCode)</td>
+									<td>@Html.DisplayFor(modelItem => item.SchoolName)</td>
+									<td>@Html.DisplayFor(modelItem => item.Phone)</td>
+									<td>
+										<button name="editjobId" value="@item.SchoolId" class="btn btn-info">تعديل</button>
+									</td>
+									<td>
+										<button name="deletejobId" value="@item.SchoolId" class="btn btn-danger">حذف</button>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+}

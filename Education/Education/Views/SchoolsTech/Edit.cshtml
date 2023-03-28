@@ -1,0 +1,111 @@
+﻿@model Education.Data.School
+
+@{
+    ViewBag.Title = "تعديل";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<div class="card shadow mb-4">
+	<div class="card-header">
+		<strong class="card-title">المدرسة </strong>
+	</div>
+	<div class="card-body">
+		@using (Html.BeginForm())
+		{
+			@Html.AntiForgeryToken()
+
+
+			<div class="form-horizontal">
+		
+				<hr />
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+				@Html.HiddenFor(model => model.SchoolId)
+
+
+				
+
+				<div class="form-group">
+					@Html.Label("اسم المدرسة", htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.School_Name, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.School_Name, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					@Html.Label("الهاتف", htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					@Html.Label("الايميل", htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.Label("نوع المدرسة", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        <select name="Type" id="Type" class="form-control">
+                            <option value="1">الروضة</option>
+                            <option value="2">الابتدائي</option>
+                            <option value="3">الاعدادي</option>
+                            <option value="4">الثانوي</option>
+                            <option value="5">الجامعي</option>
+                        </select>
+                        </div>
+                    </div>
+
+				<div class="form-group">
+					@Html.Label("الموقع", htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					@Html.Label("الاعتماد الدولي", htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.Office, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Office, "", new { @class = "text-danger" })
+					</div>
+				</div>
+                <div class="form-group">
+                    @Html.Label("نبذة عن المدرسة", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Notes, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+				<div class="form-group">
+					@Html.Label("تفعيل", htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						<div class="checkbox">
+							@Html.EditorFor(model => model.IsActive)
+							@Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						<input type="submit" value="تعديل" class="btn btn-info" />
+					</div>
+				</div>
+			</div>
+		}
+
+		<div>
+			@Html.ActionLink("العودة لصفحة السابقة", "Index")
+		</div>
+
+		</div>
+	</div>

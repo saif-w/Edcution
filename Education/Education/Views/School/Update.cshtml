@@ -1,0 +1,82 @@
+﻿@using Education.Models
+@model SchoolModel
+@{
+    ViewBag.Title = "بيانات المدرسة";
+    Layout = "~/Views/Shared/_LayoutSchool.cshtml";
+}
+<style>
+    label {
+     font-family: Times, Times New Roman, Georgia, serif;
+    color:black;
+    font-size:small;
+    font-weight:bold;
+}
+    .font{
+      font-family: Times, Times New Roman, Georgia, serif;
+     color:black;
+     font-size:small;
+     font-weight:bold;
+    }
+</style>
+@using (Html.BeginForm("Update", "School", FormMethod.Post))
+{
+
+	<div class="card shadow mb-4">
+		<div class="card-header">
+			<strong class="card-title">بيانات المدرسة</strong>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-6">
+					@*<div class="form-group mb-3">
+						<label for="simpleinput">SchoolCode</label>
+						
+						@Html.TextBoxFor(a => a.SchoolCode, new { @class = "form-control font" })
+
+					</div>*@
+					<div class="form-group mb-3">
+						<label for="simpleinput" class="form-group">اسم المدرسة</label>
+						@Html.HiddenFor(a => a.SchoolId)
+						@Html.TextBoxFor(a => a.SchoolName, new { @class = "form-control font " })
+					</div>
+					<div class="form-group mb-3">
+						<label for="simpleinput">رقم الهاتف</label>
+						@Html.TextBoxFor(a => a.Phone, new { @class = "form-control font" })
+					</div>
+                    <div class="form-group mb-3">
+                        <label for="simpleinput">موقع التواصل الاجتماعي  </label>
+                        @Html.TextBoxFor(a => a.Emile, new { @class = "form-control font" })
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="simpleinput">الاعتماد الدولي  </label>
+                        @Html.TextBoxFor(a => a.Office, new { @class = "form-control font" })
+                    </div>
+				</div> <!-- /.col -->
+				
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        @Html.Label("نوع المدرسة", htmlAttributes: new { @class = "control-label " })
+                           <select name="Type" id="Type" class="form-control font">
+                                <option value="1">الروضة</option>
+                                <option value="2">الابتدائي</option>
+                                <option value="3">الاعدادي</option>
+                                <option value="4">الثانوي</option>
+                                <option value="5">الجامعي</option>
+                            </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="simpleinput">الموقع الجغرافي </label>
+                        @Html.TextBoxFor(a => a.Adress, new { @class = "form-control font" })
+                    </div>
+				</div>
+			</div>
+			<div class="row">
+				<button class="btn btn-primary">
+					حفظ
+				</button>
+			</div>
+		</div>
+		
+
+	</div>
+									}

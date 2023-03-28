@@ -1,0 +1,133 @@
+﻿@model IEnumerable<Education.Data.School>
+
+@{
+	ViewBag.Title = "المدارس";
+	Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+<style>
+    label {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .font {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+</style>
+<div class="card shadow mb-4">
+	@Html.ValidationSummary(true, "", new { @class = "text-danger font" })
+
+
+	<div class="card-header">
+		<strong class="card-title">اضافة مدرس</strong>
+	</div>
+	<div class="card-body">
+
+
+		<div class="btn btn-success">
+			@Html.ActionLink("جديد", "Create", new { @class = "" })
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">@ViewBag.Title</div>
+			<div class="panel-body">
+				<div class="form-group">
+                    <div class="table-responsive">
+                                <table data-order='[]' class="table datatables" id="dataTable-1">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayName("ر.ت")
+                                            </th>
+                                            <th>
+                                                @Html.DisplayName("اسم المدرسة")
+                                            </th>
+
+                                            <th>
+                                                @Html.DisplayName("رقم الهاتف")
+                                            </th>
+                                            <th>
+                                                @Html.DisplayName("الايميل")
+                                            </th>
+                                            <th>
+                                                @Html.DisplayName(" نوع المدرسة")
+                                            </th>
+                                            <th>
+                                                @Html.DisplayName("المنطقة السكنية")
+                                            </th>
+
+                                            <th>
+                                                @Html.DisplayName("مفعل")
+                                            </th>
+                                            <th>
+                                                تفعيل
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    @{
+                                    int count = 0;
+                                    }
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>
+                                            @count
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.School_Name,new {@class="font" })
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Phone, new { @class = "font" })
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Email, new { @class = "font" })
+                                        </td>
+                                        <td>
+                                            @if (item.Type == 1)
+                                            {@Html.Label("روضة", new { @class = "font" }) }
+                                            else if (item.Type == 2)
+                                            { @Html.Label("ابتدائي", new { @class = "font" }) }
+                                            else if (item.Type == 3)
+                                            {@Html.Label("اعدادي", new { @class = "font" }) }
+                                            else if (item.Type == 4)
+                                            {@Html.Label("ثانوي", new { @class = "font" }) }
+                                            else if (item.Type == 5)
+                                            {@Html.Label("جامعي", new { @class = "font" }) }
+                                            else
+                                            {@Html.Label("غير مصنف", new { @class = "font" }) }
+
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Area, new { @class = "font" })
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IsActive, new { @class = "font" })
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("تعديل", "Edit", new {@class="btn-Info btn", id = item.SchoolId }) |
+                                            @*@Html.ActionLink("تفاصيل", "Details", new { id=item.SchoolId }) |*@
+                                            @Html.ActionLink("حذف", "Delete", new { @class ="btn-danger btn", id = item.SchoolId })
+                                        </td>
+                                    </tr>
+                                }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+		</div>
+
+	</div>
+	
+</div>
+

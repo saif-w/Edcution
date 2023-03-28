@@ -1,0 +1,124 @@
+﻿@using Education.Models
+@model HomeModel
+@{
+    ViewBag.Title = "IndexSchool";
+    Layout = "~/Views/Shared/_LayoutSchool.cshtml";
+}
+<div class="container">
+	<div class="row my-4">
+		
+		<div class="col-6 col-lg-3">
+			<div class="card shadow mb-4">
+				<div class="card-body">
+					<i class="fe fe-users fe-32 text-primary"></i>
+					<a href="@Url.Action("Index","TeacherTech")">
+						<h3 class="h5 mt-4 mb-1">المدرسين</h3>
+					</a>
+					<p class="text-muted">البداء في العمل</p>
+				</div> <!-- .card-body -->
+			</div> <!-- .card -->
+		</div>
+		<div class="col-6 col-lg-3">
+			<div class="card shadow mb-4">
+				<div class="card-body">
+					<i class="fe fe-home fe-32 text-danger"></i>
+					<a href="@Url.Action("Update","School")">
+						<h3 class="h5 mt-4 mb-1">اعدادات المدرسة </h3>
+					</a>
+					<p class="text-muted">البداء في العمل</p>
+				</div> <!-- .card-body -->
+			</div> <!-- .card -->
+		</div>
+		<div class="col-6 col-lg-3">
+			<div class="card shadow mb-4">
+				<div class="card-body">
+					<i class="fe fe-mail fe-32 text-warning"></i>
+					<a href="#" onclick="displayInfo()">
+						<h3 class="h5 mt-4 mb-1">البريد</h3>
+					</a>
+					<p class="text-muted">البداء في العمل</p>
+				</div> <!-- .card-body -->
+			</div> <!-- .card -->
+		</div>
+		<div class="col-6 col-lg-3">
+			<div class="card shadow mb-4">
+				<div class="card-body">
+					<i class="fe fe-headphones fe-32 text-info"></i>
+					<a href="#" onclick="displayInfo()">
+						<h3 class="h5 mt-4 mb-1">الدعم الفني</h3>
+					</a>
+					<p class="text-muted">البداء في العمل</p>
+				</div> <!-- .card-body -->
+			</div> <!-- .card -->
+		</div>
+	</div>
+	<div class="row my-4">
+		<div class="col-md-6">
+			<div class="card shadow bg-primary text-center mb-4">
+				<div class="card-body p-5">
+					<span class="circle circle-md bg-primary-light">
+						<i class="fe fe-navigation fe-24 text-white"></i>
+					</span>
+					<h3 class="h4 mt-4 mb-1 text-white">الملفات المرفقة</h3>
+					<p class="text-white mb-4">تنزيل البيانات و المرفقات الخاصة باالمدرسة</p>
+					<a href="#" class="btn btn-lg bg-primary-light text-white">New Ticket<i class="fe fe-arrow-right fe-16 ml-2"></i></a>
+				</div> <!-- .card-body -->
+			</div> <!-- .card -->
+		</div> <!-- .col-md-->
+		<div class="col-md-6">
+			<div class="card shadow bg-success text-center mb-4">
+				<div class="card-body p-5">
+					<span class="circle circle-md bg-success-light">
+						<i class="fe fe-message-circle fe-24 text-white"></i>
+					</span>
+					<h3 class="h4 mt-4 mb-1 text-white"> النتائج</h3>
+					<p class="text-white mb-4">عرض النتائج الخاصة با الطلبة</p>
+					<a href="#" class="btn btn-lg bg-success-light text-white">Let chat<i class="fe fe-arrow-right fe-16 ml-2"></i></a>
+				</div> <!-- .card-body -->
+			</div> <!-- .card -->
+		</div> <!-- .col-md-->
+	</div>
+	<script>
+		function displayInfo(){
+			alert("جاري العمل على تفعيل الشاشة");  // display string message
+
+		}
+	</script>
+
+
+
+		@*<!-- info small box -->
+			<div class="row">
+				<div class="col-md-4 mb-4">
+					<div class="card shadow">
+						<div class="card-body">
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="card shadow">
+						<div class="card-body">
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="card shadow">
+						<div class="card-body">
+							<div class="row align-items-center">
+								<div class="col">
+									<span class="h2 mb-0">@Model.SchoolCount</span>
+									<p class="small text-muted mb-0">المدرسين</p>
+									<span class="badge badge-pill badge-warning"></span>
+								</div>
+								<div class="col-auto">
+									<span class="fe fe-32 fe-users text-muted mb-0"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end section -->
+			<!-- widgets -->*@
+	</div>

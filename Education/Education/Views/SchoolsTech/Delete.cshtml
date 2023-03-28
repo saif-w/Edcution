@@ -1,0 +1,233 @@
+﻿@model Education.Data.School
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>هل انت متاكد من عملية الحذف؟</h3>
+<div>
+    <h4>مدرسة</h4>
+    <hr />
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDRef)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDRef)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.school_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.school_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.School_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.School_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStartWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStartWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeEndWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeEndWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VacationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VacationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatisticaFigure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatisticaFigure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationalLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationalLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Office)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Office)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalStudents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalStudents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalStaff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalStaff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentedBuildingsNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentedBuildingsNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GovernmentBuildingsNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GovernmentBuildingsNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearFounded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearFounded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceBook)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceBook)
+        </dd>
+
+    </dl>*@
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

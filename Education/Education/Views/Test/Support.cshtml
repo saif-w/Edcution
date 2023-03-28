@@ -1,0 +1,57 @@
+﻿
+@{
+	ViewBag.Title = "Support";
+	Layout = "~/Views/Shared/_LayoutSchool.cshtml";
+}
+<style>
+    label {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .font {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+</style>
+
+<div class="container">
+	
+		<div class="card shadow mb-4">
+			<div class="card-header">
+				<strong class="card-title">دعم الفني </strong>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-6">
+						  <div class="form-group mb-3">
+                        <label for="simpleinput"> رقم الوطني  </label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control font" />
+                        </div>
+                    </div>
+                       
+					</div> <!-- /.col -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            @Html.Label("  نوع الاستفسار", htmlAttributes: new { @class = "control-label " })
+                            <select name="Type" id="Type" class="form-control font">
+                                <option value="1">فني/ تقني</option>
+                                <option value="2"> المنظومة</option>
+                                <option value="3"> اوراق رسمية</option>
+                                <option value="4"> خدمات اخرى</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+				<div class="row">
+					<input type="button" class="btn btn-success" value="ارسال" />
+				</div>
+			</div>
+		</div>
+</div>
+

@@ -1,0 +1,76 @@
+﻿@using Education.Models
+@model HomeModels 
+@{
+    ViewBag.Title = "Home Page";
+}
+@*<section class="section-padding">
+    <div class="container shadow-lg">
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="card shadow-lg" style="width: 30rem;">
+                    <img src="~/Img/new1.jpg" class="card-img-top center"  alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">وَزِير التّربية والتّعليم يتفقَّد مدرسة تاجوراء المركزية ويتعهّد بإدراج “جابر بن حيان” ضِمن أولويات الصيانة </h5>
+                        <p class="card-text">تفقّد وَزِير التّربية والتّعليم الدكتور “موسى المقريف” صباح اليوم الأربعاء مدرسة “تاجوراء المركزية” للتعليم الأساسي، بمُراقبة التربية والتّعليم تاجوراء، في جولة رافقه فيها مُدير إدارة التّعليم الأساسي بالوزارة الأستاذ “حسن أبو غالية”، ومُدير مكتب المُتابعة وتقييم الأداء الأستاذة “سمية راشد”، ومُراقب التّربية والتّعليم تاجوراء الأستاذ “سمير بالأشهر”..</p>
+                        <a href="#" class="btn btn-primary">المزيد...</a>
+                    </div>
+                </div>
+           
+             </div>
+            <div class="col-md-4">
+            
+                    <div class="card shadow-lg border-1" style="width: 30rem;">
+                    <img src="~/Img/new2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-deck"></h6>
+                        <h5 class="card-title">الوَزِير يلتقي عَدد من أولياء أمور وطلاب شَهادة إتمام مرحلة التّعليم الثانوي </h5>
+                        <p class="card-text">وأوضح الوَزِير حِرص الوزارة على تنفيذها لرِسالتها التّربوية وحِرصها على أن يَكون الطلاب داخِل المدارس لا خارجها، مهما كانت الظروف والأسباب، وأنَّ الوزارة تَعِي جيّداً ما مرَّت به دُفعة 2004م من ظروف وتقطع، وعَدم اِنتظام في الدِّراسة ما أثَّر على التَّحصيل العلمي لديهم، وإدراكها لصعوبة اِمتحانات شَهادة إتمام مرحلة التّعليم الثانوي، وهو ما دفع لإصدار القرار</p>
+                        <a href="#" class="btn btn-primary">المزيد... </a>
+                    </div>
+                </div>
+          
+              </div>
+            <div class="col-md-4 shadow-lg">
+               
+                 <div class="card " style="width: 30rem;">
+                    <img src="~/Img/new3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">وزير التربية والتعليم يحضر احتفال مدرسة الجمهورية للتعليم الاساسي </h5>
+                        <p class="card-text">وزير التربية والتعليم الدكتور “موسى المقريف” يحضر احتفال مدرسة الجمهورية للتعليم الاساسي بالذكرى ال71 لاستقلال ليبيا رفق مدير إدارة النشاط المدرسي بالوزارة الأستاذ “عبد الباسط النعاس ” ومراقب التربية والتعليم ببلدية طرابلس المركز الأستاذ “عبدالرزاق الرميلي ” وعدد من من مديري المكاتب بمراقبة التربية طرابلس المركز وال رؤساء الاقسام بإدارة النشاط المدرسي وإدارة ومعلمي المدرسة.</p>
+                        <a href="#" class="btn btn-primary">المزيد... </a>
+                    </div>
+                </div>
+           
+             </div>
+        </div>
+    </div>
+</section>*@
+
+@if (ViewBag.Message != null)
+{
+    <span class="alert-danger">ViewBag.Message</span>
+}
+
+@if(Model.Url==null || Model.Url == "")
+{
+    <div class="container">
+        <div class="row mt-2">
+            @Html.Partial("_News")
+        </div>
+        <div class="row mt-2">
+            @Html.Partial("_Counter")
+        </div>
+        <div class="row mt-2">
+            @Html.Partial("_Contact")
+        </div>
+    </div>
+  
+}
+else
+{
+    <add name="X-Frame-Options" value="https://www.google.com/" />
+    <iframe src="@Model.Url" height="1500px" width="100%"></iframe>
+
+}
+

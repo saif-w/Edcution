@@ -1,0 +1,50 @@
+﻿@using Education.Models
+@model MessagesModel
+@{
+    ViewBag.Title = "البريد";
+    Layout = "~/Views/Shared/_LayoutSchool.cshtml";
+}
+<style>
+    label {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .font {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+</style>
+@using (Html.BeginForm("Messages", "Test", FormMethod.Post))
+{
+    <div class="card shadow">
+	<div class="card-header">
+		<strong class="card-title">البريد</strong>
+	</div>
+	<div class="card-body">
+		<form>
+			<div class="form-group">
+				<label for="inputAddress">الايميل</label>
+                @Html.TextBoxFor(a=>a.Emile,new {@class= "form-control font" , type = "email" })
+			</div>
+			<div class="form-row">
+				
+				<div class="form-group col-md-6">
+					<label for="inputPassword4"> العنوان</label>
+					@Html.TextAreaFor(a => a.Subject, new { @class = "form-control font" })
+				</div>
+			</div>
+			<div class="form-group ">
+				<label for="inputPassword4">الامحتوى</label>
+				@Html.TextAreaFor(a => a.Message, new { @class = "form-control font" })
+			</div>
+			<button type="submit" class="btn btn-primary">ارسال</button>
+		</form>
+	</div>
+</div>
+
+}

@@ -1,0 +1,91 @@
+﻿@using Education.Models
+@model UserModel
+@{
+	ViewBag.Title = "تعديل";
+	Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="card shadow mb-4">
+	<div class="card-header">
+		<strong class="card-title">تعديل بيانات المستخدم </strong>
+	</div>
+	<div class="card-body">
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		@Html.HiddenFor(model => model.userid)
+
+		<div class="form-group">
+			@Html.Label("المدرسة", new { @class = "control-label col-md-2" })
+			<input class="form-check-input" value="مدير قسم" name="gridCheck1" type="checkbox" id="gridCheck1">
+
+			<div class="col-md-10">
+				@Html.DropDownList("SchoolId", null, htmlAttributes: new { @class = "form-control select2" })@Html.ValidationMessageFor(model => model.SchoolId, "", new { @class = "text-danger" })
+				@Html.ValidationMessageFor(model => model.SchoolId, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+	
+		<div class="form-group">
+			@Html.Label("اسم المستخدم", new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.Label("كلمة السر",new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+	
+		<div class="form-group">
+			@Html.Label("ايميل",new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.TextBoxFor(model => model.Emile, new  { @class = "form-control" } )
+				@Html.ValidationMessageFor(model => model.Emile, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		
+		<div class="form-group">
+			@Html.Label("الهاتف", new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		
+		<div class="form-group">
+			@Html.Label("تفعيل", new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<div class="checkbox">
+					@Html.EditorFor(model => model.Active)
+					@Html.ValidationMessageFor(model => model.Active, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="تعديل" class="btn btn-info" />
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	@Html.ActionLink("العودة للقائمة السابقة", "Index")
+</div>
+
+	</div>
+</div>
+		

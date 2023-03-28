@@ -1,0 +1,227 @@
+﻿@model Education.Data.AspNetUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AspNetUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDRef)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDRef)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OB_SEQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OB_SEQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDepartment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDepartment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecurityStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwoFactorEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LockoutEndDateUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LockoutEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LockoutEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessFailedCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessFailedCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UR_NoMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UR_NoMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UR_DateReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UR_DateReg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UR_Ask)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UR_Ask)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UR_Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UR_Answer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UR_Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UR_Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UR_SysDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UR_SysDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UR_IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UR_IsActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

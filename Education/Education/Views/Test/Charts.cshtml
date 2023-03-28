@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewBag.Title = "Charts";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<link rel="stylesheet" href="css/simplebar.css">
+<!-- Fonts CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- Icons CSS -->
+<link rel="stylesheet" href="~/Content/css/feather.css">
+<!-- Date Range Picker CSS -->
+<link rel="stylesheet" href="~/Content/css/daterangepicker.css">
+<div class="row">
+	<div class="col-md-6 mb-4">
+		<div class="card shadow">
+			<div class="card-header">
+				<strong class="card-title mb-0">الشكل 1 </strong>
+				<div class="dropdown float-right">
+					<button class="btn btn-sm btn-link text-muted dropdown-toggle p-0" type="button" id="rangeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 7 days </button>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="rangeDropdown">
+						<a class="dropdown-item small text-muted" href="#">30 days</a>
+						<a class="dropdown-item small active" href="#">90 days</a>
+						<a class="dropdown-item small text-muted" href="#">All</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<canvas id="barChartjs" width="400" height="300"></canvas>
+			</div> <!-- /.card-body -->
+		</div> <!-- /.card -->
+	</div> <!-- /. col -->
+	<div class="col-md-6 mb-4">
+		<div class="card shadow">
+			<div class="card-header">
+				<strong class="card-title mb-0">الشكل 2 </strong>
+				<span class="badge badge-light float-right mr-2">30 days</span>
+				<span class="badge badge-light float-right mr-2">7 days</span>
+				<span class="badge badge-secondary float-right mr-2">Today</span>
+			</div>
+			<div class="card-body">
+				<canvas id="lineChartjs" width="400" height="300"></canvas>
+			</div> <!-- /.card-body -->
+		</div> <!-- /.card -->
+	</div> <!-- /. col -->
+</div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+
+				$.ajax({
+					type: "GET",
+					url: "/Test/GetSchoolData",
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: function (chData) {
+						var aData = chData;
+						var aLabels = aData[0];
+						var aDatasets1 = aData[1];
+						var dataT = {
+							labels: aLabels,
+							datasets: [{
+								label: "Test Data",
+								data: aDatasets1,
+								fill: false,
+								backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+								borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+								borderWidth: 1
+							}]
+						};
+						var ctx = $("#barChartjs").get(0).getContext("2d");
+						var myNewChart = new Chart(ctx, {
+							type: 'pie',
+							data: dataT,
+							options: {
+								responsive: true,
+								title: { display: true, text: 'بيانات المدارس' },
+								legend: { position: 'bottom' },
+								scales: {
+									xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+									yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+								},
+							}
+						});
+					}
+				});
+
+</script>
+<script>
+
+				$.ajax({
+					type: "GET",
+					url: "/Test/GetSchoolData",
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: function (chData) {
+						var aData = chData;
+						var aLabels = aData[0];
+						var aDatasets1 = aData[1];
+						var dataT = {
+							labels: aLabels,
+							datasets: [{
+								label: "Test Data",
+								data: aDatasets1,
+								fill: false,
+								backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+								borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+								borderWidth: 1
+							}]
+						};
+						var ctx = $("#lineChartjs").get(0).getContext("2d");
+						var myNewChart = new Chart(ctx, {
+							type: 'pie',
+							data: dataT,
+							options: {
+								responsive: true,
+								title: { display: true, text: 'بيانات المدارس' },
+								legend: { position: 'bottom' },
+								scales: {
+									xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+									yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+								},
+							}
+						});
+					}
+				});
+
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+</script>
+<script src="~/Content/js/jquery.min.js"></script>
+<script src="~/Content/js/popper.min.js"></script>
+<script src="~/Content/js/moment.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+<script src="~/Content/js/simplebar.min.js"></script>
+<script src='~/Content/js/daterangepicker.js'></script>
+<script src='~/Content/js/jquery.stickOnScroll.js'></script>
+<script src="~/Content/js/tinycolor-min.js"></script>
+<script src="~/Content/js/config.js"></script>
+<script src="~/Content/js/d3.min.js"></script>
+<script src="~/Content/js/topojson.min.js"></script>
+<script src="~/Content/js/datamaps.all.min.js"></script>
+<script src="~/Content/js/datamaps-zoomto.js"></script>
+<script src="~/Content/js/datamaps.custom.js"></script>
+<script src="~/Content/js/Chart.min.js"></script>
+<script>
+      /* defind global options */
+      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+      Chart.defaults.global.defaultFontColor = colors.mutedColor;
+</script>
+<script src="~/Content/js/gauge.min.js"></script>
+<script src="~/Content/js/jquery.sparkline.min.js"></script>
+<script src="~/Content/js/apexcharts.min.js"></script>
+<script src="~/Content/js/apexcharts.custom.js"></script>
+<script src="~/Content/js/apps.js"></script>

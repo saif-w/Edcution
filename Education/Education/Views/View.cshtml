@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+
+
+    <!--  test data tabel -->
+    <!-- End Test Data Tabel-->
+    <!-- Title -->
+    <title>..:: وزارة التربية و التعليم ::..</title>
+
+
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.accordion.css" rel="stylesheet" />
+    <link href="~/Content/css/mmenu.css" rel="stylesheet" />
+    <link href="~/Content/css/mmenu.positioning.css" rel="stylesheet" />
+    <link href="~/Content/css/responsivetable.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link href="~/Content/~/Content/images/favicon.ico" rel="icon" type="~/Content/image/x-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Mobile Menu -->
+    <link href="~/Content/css/mmenu.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/mmenu.positioning.css" rel="stylesheet" type="text/css" />
+
+    <!-- Stylesheet -->
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            direction: rtl;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Start: Header Section -->
+    <header id="header-v1" class="navbar-wrapper">
+        <div class="container" style="direction:ltr;">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="navbar-header">
+                                <div class="navbar-brand">
+                                    <h1>
+                                        <a href="index-2.html">
+                                            <img src="images/libraria-logo-v1.png" alt="وزارةالتربية" />
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <!-- Header Topbar -->
+                            <div class="header-topbar hidden-sm hidden-xs">
+                                <div class="row">
+                                    <div class="col-sm-6">
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="topbar-links">
+
+                                            <a href="@Url.Action("LoginMain", "Home")"><i class="fa fa-lock"></i>تسجيل الدخول </a>
+                                            <span>|</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navbar-collapse hidden-sm hidden-xs text-left" style="direction:ltr; font-family: system-ui;font-weight: bold;">
+                                <ul class="nav navbar-nav">
+
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="@Url.Action("Contact", "Home")">تواصل معنا</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">المشاركة الالكترونية</a></li>
+                                            <li><a href="#">الشروط و الضوابط</a></li>
+                                            <li><a href="#">مكتب الاستثمار</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">مركز الاعلامي</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">اخبار القسم</a></li>
+                                            <li><a href="#">الفاعليات</a></li>
+                                            <li><a href="#">الشبكات الاجتماعية</a></li>
+                                            <li><a href="#">مكتبة الصور</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">المدرسة الليبية بالخارج</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">اسم المدرسة</a></li>
+                                            <li><a href="#">التوزيع الجغرافي </a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">الوزارة</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">قطاعات الوزارة</a></li>
+                                            <li><a href="#">وزارة التربة و التعليم</a></li>
+                                            <li><a href="#">قسم التعليم الخاص</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="@Url.Action("Index", "Home")">الرئيسية</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-menu hidden-lg hidden-md">
+                        <a href="#mobile-menu"><i class="fa fa-navicon"></i></a>
+                        <div id="mobile-menu">
+                            <ul>
+                                <li class="mobile-title">
+                                    <h4>Navigation</h4>
+                                    <a href="#" class="close"></a>
+                                </li>
+                                <li>
+                                    <a href="#">المشاركة الالكترونية</a>
+                                    <ul>
+                                        <li><a href="#">Home V1</a></li>
+                                        <li><a href="#">Home V2</a></li>
+                                        <li><a href="#">Home V3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Contact", "Home")">تواصل معنا</a>
+
+                                </li>
+                                <li>
+                                    <a href="#">المركز الاعلامي</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">اخبار القسم</a></li>
+                                        <li><a href="#">الفاعليات</a></li>
+                                        <li><a href="#">الشبكات الاجتماعية</a></li>
+                                        <li><a href="#">مكتبة الصور</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">التعليم</a>
+                                    @*<ul>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="signin.html">Signin/Register</a></li>
+                                            <li><a href="404.html">404/Error</a></li>
+                                        </ul>*@
+                                </li>
+                                <li>
+                                    <a href="#">المدرسة الليبية بالخارج</a>
+                                    <ul>
+                                        <li><a href="#">اسم المدرسة</a></li>
+                                        <li><a href="#">التوزيع الجغرافي </a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">الوزارة</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">قطاعات الوزارة</a></li>
+                                        <li><a href="#">وزارة التربة و التعليم</a></li>
+                                        <li><a href="#">قسم التعليم الخاص</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="@Url.Action("Index", "Home")">الرئيسية</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div data-ride="carousel" class="carousel slide" id="home-v1-header-carousel">
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <figure>
+                    <img alt="Home Slide" src="~/Content/images/header-slider/home-v1/header-slide.jpeg" />
+
+                </figure>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h3>!!! تعليم عبر الانترنت في اي وقت</h3>
+                        <h2>تعليم متميز لبناء مجتمع معرفي منافس عالمياً</h2>
+
+                        <div class="slide-buttons hidden-sm hidden-xs">
+                            <a href="@Url.Action("LoginMain", "Home")" class="btn btn-primary">تسجيل الدخول</a>
+                            <a href="#" class="btn btn-default">تعرف على المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End: Header Section -->
+    @RenderBody()
+    <!-- Start: Slider Section -->
+    <footer class="site-footer" style="direction:ltr">
+        <div class="container">
+            <div id="footer-widgets" style="direction: ltr;">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 widget-container">
+                        <div id="text-2" class="widget widget_text">
+                            <h3 class="footer-widget-title"> عن الوزارة</h3>
+                            <span class="underline left"></span>
+                            <div class="textwidget">
+                                تقديم الوسائل المنهجية لدراسة
+                            </div>
+                            <address>
+                                <div class="info">
+                                    <i class="fa fa-location-arrow"></i>
+                                    @*<span>21 King Street, Melbourne, Victoria 3000 Australia</span>*@
+                                </div>
+                                <div class="info">
+                                    <i class="fa fa-envelope"></i>
+                                    <span><a href="mailto:support@libraria.com">لتواصل معنا </a></span>
+                                </div>
+                                <div class="info">
+                                    <i class="fa fa-phone"></i>
+                                    <span><a href="tel:012-345-6789"></a></span>
+                                </div>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 widget-container">
+                        <div id="nav_menu-2" class="widget widget_nav_menu">
+                            <h3 class="footer-widget-title">التوصيل السريع</h3>
+                            <span class="underline left"></span>
+                            <div class="menu-quick-links-container">
+                                <ul id="menu-quick-links" class="menu">
+                                    <li><a href="#">الرئيسية</a></li>
+                                    <li>
+                                        <a href="#">الوزارة</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Cart</a></li>
+                                            <li><a href="#">Checkout</a></li>
+                                            <li><a href="#">Signin/Register</a></li>
+                                            <li><a href="#">404/Error</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">تواصل معنا</a></li>
+                                    <li><a href="#">بريد الالكتروني</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix hidden-lg hidden-md hidden-xs tablet-margin-bottom"></div>
+                    <div class="col-md-2 col-sm-6 widget-container">
+                        <div id="text-4" class="widget widget_text">
+                            <h3 class="footer-widget-title">تواقيت العمل</h3>
+                            <span class="underline left"></span>
+                            <div class="timming-text-widget">
+                                <time datetime="2017-02-13">Mon - Thu: 9 am - 9 pm</time>
+                                <time datetime="2017-02-13">Fri: 9 am - 6 pm</time>
+                                <time datetime="2017-02-13">Sat: 9 am - 5 pm</time>
+                                <time datetime="2017-02-13">Sun: 1 pm - 6 pm</time>
+                                <ul>
+                                    <li><a href="#">اغلاق</a></li>
+                                    <li><a href="#">اعداد</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-md-4 col-sm-6 widget-container">
+                            <div class="widget twitter-widget">
+                                <h3 class="footer-widget-title"> </h3>
+                                <span class="underline left"></span>
+
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End: Footer -->
+    <!-- jQuery Latest Version 1.x -->
+    <script type="text/javascript" src="~/Content/js/jquery-1.12.4.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script type="text/javascript" src="~/Content/js/jquery-ui.min.js"></script>
+
+    <!-- jQuery Easing -->
+    <script type="text/javascript" src="~/Content/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
+
+    <!-- Mobile Menu -->
+    <script type="text/javascript" src="~/Content/js/mmenu.min.js"></script>
+
+    <!-- Harvey - State manager for media queries -->
+    <script type="text/javascript" src="~/Content/js/harvey.min.js"></script>
+
+    <!-- Waypoints - Load Elements on View -->
+    <script type="text/javascript" src="~/Content/js/waypoints.min.js"></script>
+    <!-- Facts Counter -->
+    <script type="text/javascript" src="~/Content/js/facts.counter.min.js"></script>
+    <!-- MixItUp - Category Filter -->
+    <script type="text/javascript" src="~/Content/js/mixitup.min.js"></script>
+    <!-- Owl Carousel -->
+    <script type="text/javascript" src="~/Content/js/owl.carousel.min.js"></script>
+
+    <!-- Accordion -->
+    <script type="text/javascript" src="~/Content/js/accordion.min.js"></script>
+
+    <!-- Responsive Tabs -->
+    <script type="text/javascript" src="~/Content/js/responsive.tabs.min.js"></script>
+
+    <!-- Responsive Table -->
+    <script type="text/javascript" src="~/Content/js/responsive.table.min.js"></script>
+
+    <!-- Masonry -->
+    <script type="text/javascript" src="~/Content/js/masonry.min.js"></script>
+
+    <!-- Carousel Swipe -->
+    <script type="text/javascript" src="~/Content/js/carousel.swipe.min.js"></script>
+
+    <!-- bxSlider -->
+    <script type="text/javascript" src="~/Content/js/bxslider.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="~/Content/js/main.js"></script>
+
+</body>
+</html>

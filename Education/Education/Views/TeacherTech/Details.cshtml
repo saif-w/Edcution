@@ -1,0 +1,147 @@
+﻿@model Education.Data.Teacher
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutSchool.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Teacher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sons)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sons)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SonsYounger6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SonsYounger6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SonsYounger24)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SonsYounger24)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SonsOLder24)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SonsOLder24)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MailBox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MailBox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephon1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephon1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephon2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephon2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDTeacher }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,206 @@
+﻿@model IEnumerable<Education.Data.AspNetUser>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<div class="card shadow mb-4">
+	<div class="card-header">
+		<strong class="card-title">المدرسة </strong>
+	</div>
+	<div class="card-body">
+		<div class="btn btn-success">
+			@Html.ActionLink("اضافة", "Create")
+		</div>
+		<div class="panel panel-default">
+
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="table-responsive">
+						<table data-order='[]' class="table datatables" id="dataTable-1">
+						<thead>
+
+                            	<tr>
+								<th>
+									@Html.DisplayName("اسم المستخدم")
+								</th>
+								@*<th>
+					@Html.DisplayNameFor(model => model.IDRef)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.IdRole)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Emp_No)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.IDType)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.OB_SEQ)
+				</th>*@
+								<th>
+									@Html.DisplayName("ايميل")
+								</th>
+								@*<th>
+					@Html.DisplayNameFor(model => model.Password)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.IsDepartment)
+				</th>*@
+								<th>
+									@Html.DisplayName("الهاتف")
+								</th>
+								@*<th>
+					@Html.DisplayNameFor(model => model.EmailConfirmed)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.PasswordHash)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.SecurityStamp)
+				</th>*@
+								<th>
+									@Html.DisplayName("تفعيل")
+								</th>
+								@*<th>
+					@Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.TwoFactorEnabled)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.LockoutEnabled)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.AccessFailedCount)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UR_NoMobile)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UR_DateReg)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UR_Ask)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UR_Answer)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UR_Notes)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UR_SysDate)
+				</th>*@
+								
+								<th>
+									تعديل
+								</th>
+							</tr>
+                        </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        @*<td>
+                        @Html.DisplayFor(modelItem => item.SchoolId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDRef)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdRole)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Emp_No)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OB_SEQ)
+                    </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UserName)
+                                        </td>
+                                        @*<td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsDepartment)
+                    </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Email)
+                                        </td>
+                                        @*<td>
+                        @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PasswordHash)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SecurityStamp)
+                    </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                        </td>
+                                        @*<td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LockoutEnabled)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccessFailedCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UR_NoMobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UR_DateReg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UR_Ask)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UR_Answer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UR_Notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UR_SysDate)
+                    </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UR_IsActive)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("تعديل", "Edit", new { id = item.UserID ,@class="btn btn-info"}) @*|
+                        @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.UserID })*@
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+						
+
+					</div>
+				</div>

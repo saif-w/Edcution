@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Education.Data.Teacher>
+
+@{
+	ViewBag.Title = "المدرسين";
+	Layout = "~/Views/Shared/_LayoutSchool.cshtml";
+}
+
+<div class="card shadow mb-4">
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+	<div class="card-header">
+		<strong class="card-title">المدرسين</strong>
+	</div>
+	<div class="card-body">
+
+		<div class="btn btn-success">
+			@Html.ActionLink("جديد", "Create", new { @class = "btn btn-success" })
+		</div>
+		<div class="panel panel-default">
+			
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="table-responsive">
+						<table data-order='[]' class="table datatables" id="dataTable-1">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <p>ر.ت</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("الاسم")
+                                    </th>
+                                 
+                                    <th>
+                                        @Html.DisplayName("تاريخ الميلاد")
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayName("الايميل")
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayName("الهاتف")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("المدينة")
+                                    </th>
+                                    <th>تفعيل</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SchoolId, new { @class = "font" })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name, new { @class = "font" })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BirthDate, new { @class = "font" })
+                                    </td>
+
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email, new { @class = "font" })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Mobile, new { @class = "font" })
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Address, new { @class = "font" })
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("تعديل", "Edit", new { @class = "btn btn-info", id = item.IDTeacher }) |
+                                        @*@Html.ActionLink("تفاصيل", "Details", new { id=item.IDTeacher }) |*@
+                                        @Html.ActionLink("حذف", "Delete", new { @class = "btn btn-danger", id = item.IDTeacher })
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+							
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

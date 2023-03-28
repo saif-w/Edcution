@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "_layoutTest";
+}
+
+<h2>_layoutTest</h2>
+@RenderBody()
+<script>
+	$('#demo').pagination({
+		dataSource: [1, 2, 3, 4, 5, 6, 7, 50],
+		pageSize: 5,
+		showPageNumbers: false,
+		showNavigator: true,
+		callback: function(data, pagination) {
+			// template method of yourself
+			var html = template(data);
+			dataContainer.html(html);
+		}
+	})
+</script>

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+    
+    
+    <!--  test data tabel -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- End Test Data Tabel-->
+    <!-- Title -->
+    <title>..:: وزارة التربية و التعليم ::..</title>
+
+    <link href="~/Content/FooterStyle.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <!-- Start: Header Section -->
+   <div style="direction:ltr">
+    <nav class="navbar navbar-inverse" style="direction:ltr;">
+        <div class="container-fluid ltr">
+            <div class="navbar-header navbar-right">
+                <a class="navbar-brand" href="#">وزارة التعليم</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      تواصل معنا
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">المشاركة الالكترونية    </a></li>
+                        <li><a href="#"> الشروط و الضوابط  </a></li>
+                        <li><a href="#"> الاعتماد الخارجي   </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                       المركز الاعلامي
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">اخبار القسم   </a></li>
+                        <li><a href="#"> الفاعليات  </a></li>
+                        <li><a href="#"> الشبكة الاجتماعية  </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        المدارس بالخارج
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">اسم المدرسة </a></li>
+                        <li><a href="#"> التوزيع الجغرافي </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        عن الوزارة
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">الهيكل التنظيمي</a></li>
+                        <li><a href="#">وزير التربية وتعليم</a></li>
+                        <li><a href="#"> قسم التعليم الخاص</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="#">الرئيسية</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="@Url.Action("LoginMain", "Home")"><span class="glyphicon glyphicon-log-in"></span> تسجيل الدخول</a></li>
+            </ul>
+        </div>
+    </nav>
+   </div>
+    <!-- End: Header Section -->
+    @RenderBody()
+    <!-- Start: Slider Section -->
+    <footer class="footer rtl" style="background-color:#333; color:beige; direction:rtl;">
+        <div class="footer__addr">
+            <h1 class="footer__logo">وزارة التربية و التعليم</h1>
+
+            <h2>لتواصل معنا</h2>
+
+            <address>
+               091#######<br>
+
+                <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+            </address>
+        </div>
+
+        <ul class="footer__nav">
+            <li class="nav__item">
+                <h2 class="nav__title">تواصل اجتماعي</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Twiter</a>
+                    </li>
+
+                  
+                </ul>
+            </li>
+
+            <li class="nav__item nav__item--extra">
+                <h2 class="nav__title">موقعنا</h2>
+
+                <ul class="nav__ul nav__ul--extra">
+                    <li>
+                        <a href="#"> طرابلس /طريق الشط</a>
+                    </li>
+
+                  
+
+                  
+                </ul>
+            </li>
+
+            @*<li class="nav__item">
+                <h2 class="nav__title">Legal</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Sitemap</a>
+                    </li>
+                </ul>
+            </li>*@
+        </ul>
+
+        <div class="legal">
+            <p>&copy; 2023 جميع الحقوق محفوظة.</p>
+
+           
+        </div>
+    </footer>
+
+    <!-- End: Footer -->
+    <!-- jQuery Latest Version 1.x -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+﻿@model Education.Data.Teacher
+
+@{
+	ViewBag.Title = "اضافة جديد";
+	Layout = "~/Views/Shared/_LayoutSchool.cshtml";
+}
+<style>
+    label {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .font {
+        font-family: Times, Times New Roman, Georgia, serif;
+        color: black;
+        font-size: small;
+        font-weight: bold;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="card shadow mb-4">
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+		<div class="card-header">
+			<strong class="card-title">اضافة مدرس</strong>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						@Html.Label("المدرسة ", htmlAttributes: new { @class = "form-label font " })
+						<div class="col-md-10">
+							@Html.DropDownList("SchoolId", null, htmlAttributes: new { @class = "form-control font select2" })@Html.ValidationMessageFor(model => model.SchoolId, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.Label("الاسم", htmlAttributes: new { @class = "form-label font " })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control font" } })
+							@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+						</div>
+					</div>
+					<div class="form-group">
+						@Html.Label("تاريخ الميلاد", htmlAttributes: new { @class = "form-label font " })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control font drgpicker" } })
+							@Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+						</div>
+					</div>
+					<div class="form-group">
+						@Html.Label("مكان الميلاد", htmlAttributes: new { @class = "form-label font " })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.BirthLocation, new { htmlAttributes = new { @class = "form-control font" } })
+							@Html.ValidationMessageFor(model => model.BirthLocation, "", new { @class = "text-danger" })
+						</div>
+					</div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="simpleinput"> الديانة  </label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Religion, new { htmlAttributes = new { @class = "form-control font" } })
+                            @Html.ValidationMessageFor(model => model.Religion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="simpleinput"> رقم الوطني  </label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NationalCard, new { htmlAttributes = new { @class = "form-control font" } })
+                            @Html.ValidationMessageFor(model => model.NationalCard, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+					
+
+					</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						@Html.Label("الايميل", htmlAttributes: new { @class = "form-label font " })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control font" } })
+							@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					
+					<div class="form-group">
+						@Html.Label("الهاتف", htmlAttributes: new { @class = "form-label font " })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control font" } })
+							@Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						@Html.Label("الموقع", htmlAttributes: new { @class = "form-label font " })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control font" } })
+							@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+						</div>
+					</div>
+                   
+                    
+                    <div class="form-group mb-3">
+                        <label for="simpleinput"> سنوات الخبرة  </label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.YearsExperice, new { htmlAttributes = new { @class = "form-control font" } })
+                            @Html.ValidationMessageFor(model => model.YearsExperice, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="simpleinput"> الوظيفة  </label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TypeWork, new { htmlAttributes = new { @class = "form-control font" } })
+                            @Html.ValidationMessageFor(model => model.TypeWork, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<input type="submit" value="اضافة" class="btn btn-success" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+}
+
+					<div class="btn btn-info">
+						@Html.ActionLink("الرجوع للقائمة السابقة", "Index")
+					</div>
