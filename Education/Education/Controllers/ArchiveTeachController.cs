@@ -64,7 +64,7 @@ namespace Education.Controllers
                     bytes = br.ReadBytes(postedFile.ContentLength);
                 }
                 //string constr = ConfigurationManager.ConnectionStrings["DBSchoolsEntities"].ConnectionString;
-                using (SqlConnection con = new SqlConnection(@"Server= 41.208.73.39; Database=DBSchoolsEntities; Integrated security=false;User=SchoolUsers; Password=P@ssw0rd; MultipleActiveResultSets=true;"))
+                using (SqlConnection con = new SqlConnection(@"Server= ws05.server.ly; Database=DBSchoolsEntities; Integrated security=false;User=user02; Password=!QA2ws3ed; MultipleActiveResultSets=true;"))
                 {
                     string query = "INSERT INTO tblFiles VALUES (@Name, @ContentType, @Data,@ReferenceNumber,@Date,@Type,@SchoolId)";
                     using (SqlCommand cmd = new SqlCommand(query))
@@ -92,7 +92,7 @@ namespace Education.Controllers
             byte[] bytes;
             string fileName, contentType;
           //  string constr = ConfigurationManager.ConnectionStrings["DBSchoolsEntities"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(@"Server= 41.208.73.39; Database=DBSchoolsEntities; Integrated security=false;User=SchoolUsers; Password=P@ssw0rd; MultipleActiveResultSets=true;"))
+            using (SqlConnection con = new SqlConnection(@"Server= ws05.server.ly; Database=DBSchoolsEntities; Integrated security=false;User=user02; Password=!QA2ws3ed; MultipleActiveResultSets=true;"))
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -120,7 +120,7 @@ namespace Education.Controllers
 
             List<FileModel> files = new List<FileModel>();
            // string constr = ConfigurationManager.ConnectionStrings["DBSchoolsEntities"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(@"Server= 41.208.73.39; Database=DBSchoolsEntities; Integrated security=false;User=SchoolUsers; Password=P@ssw0rd; MultipleActiveResultSets=true;"))
+            using (SqlConnection con = new SqlConnection(@"Server= ws05.server.ly; Database=DBSchoolsEntities; Integrated security=false;User=user02; Password=!QA2ws3ed; MultipleActiveResultSets=true;"))
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT Id, ReferenceNumber,Type FROM tblFiles where SchoolId ="+id+""))
                 {

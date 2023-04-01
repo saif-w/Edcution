@@ -37,7 +37,9 @@ namespace Education.Controllers
             }
 			SchoolClass sc = new SchoolClass();
 			var id = Convert.ToInt32(sc.GetSchool(UserName.ToString()).Rows[0][0]);
-			return View(db.Teachers.ToList().Where(a=>a.Status==""&&a.SchoolId==id ));
+            var data = db.Teachers.ToList().Where(a => a.Status == "" && a.SchoolId == id);
+
+            return View(data);
         }
 
         // GET: TeacherTech/Details/5

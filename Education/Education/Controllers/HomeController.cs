@@ -170,7 +170,7 @@ namespace Education.Controllers
 				{
                     HttpCookie userInfo = new HttpCookie("userInfo");
                     userInfo["UserName"] = model.Username;
-                    userInfo.Expires.Add(new TimeSpan(0, 1, 0));
+                    //userInfo.Expires.Add(new TimeSpan(0, 1, 0));
                     Response.Cookies.Add(userInfo);
                     //  this.Session["Username"]= model.Username;
                     return RedirectToAction("index", "SchoolHome");

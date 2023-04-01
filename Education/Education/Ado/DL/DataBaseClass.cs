@@ -9,9 +9,10 @@ namespace Education.Ado.DL
 {
 	public class DataBaseClass
 	{
-         static SqlConnection conn = new SqlConnection(@"Server= 41.208.73.39; Database=DBSchoolsEntities; Integrated security=false;User=SchoolUsers; Password=P@ssw0rd; MultipleActiveResultSets=true;");
-		//static SqlConnection conn = new SqlConnection(@"Server=.; Database=DBSchoolsEntities; Integrated security=false;User=sa; Password=!QA2ws3ed; MultipleActiveResultSets=true;");
-		static SqlCommand cmd;
+        static SqlConnection conn = new SqlConnection(@"Server=ws05.server.ly; Database=DBSchoolsEntities; Integrated security=false;User=user02; Password=!QA2ws3ed; MultipleActiveResultSets=true;");
+        // static SqlConnection conn = new SqlConnection(@"Server= 41.208.73.39; Database=DBSchoolsEntities; Integrated security=false;User=SchoolUsers; Password=P@ssw0rd; MultipleActiveResultSets=true;");
+        //static SqlConnection conn = new SqlConnection(@"Server=.; Database=DBSchoolsEntities; Integrated security=false;User=sa; Password=!QA2ws3ed; MultipleActiveResultSets=true;");
+        static SqlCommand cmd;
 
 		private static void openconn()
 		{
